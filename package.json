@@ -1,0 +1,45 @@
+{
+  "name": "@vijayishere/photo-hash",
+  "version": "1.0.0",
+  "description": "Detect near-duplicate photos using a perceptual difference hash (dHash) - robust to resizing and recompression",
+  "type": "module",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js"
+    }
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "keywords": [
+    "phash",
+    "dhash",
+    "perceptual-hash",
+    "duplicate-detection",
+    "image-similarity",
+    "image-processing",
+    "sharp"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vjymisal0/photo-hash.git"
+  },
+  "homepage": "https://github.com/vjymisal0/photo-hash#readme",
+  "bugs": {
+    "url": "https://github.com/vjymisal0/photo-hash/issues"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "sharp": "^0.35.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
