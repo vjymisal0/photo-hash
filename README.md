@@ -1,4 +1,4 @@
-# @vijayishere/photo-hash
+# photo-hash
 
 Detect near-duplicate photos using a perceptual difference hash (dHash). Two images of the same content - even resized, recompressed, or lightly edited - hash to nearly the same value, while unrelated images hash very differently.
 
@@ -7,7 +7,7 @@ Useful for deduplicating photo libraries, catching re-uploaded images, or flaggi
 ## Install
 
 ```bash
-npm install @vijayishere/photo-hash
+npm install photo-hash
 ```
 
 Requires Node.js >= 18. Uses [`sharp`](https://sharp.pixelplumbing.com/) internally.
@@ -15,7 +15,7 @@ Requires Node.js >= 18. Uses [`sharp`](https://sharp.pixelplumbing.com/) interna
 ## Usage
 
 ```js
-import { getImageHash, compareImages, isDuplicate, similarity } from '@vijayishere/photo-hash';
+import { getImageHash, compareImages, isDuplicate, similarity } from 'photo-hash';
 
 // Hash once, store the hash, compare later without re-processing the image.
 const hash = await getImageHash('photo.jpg'); // e.g. '1eba8b0b0b1f1e32'
