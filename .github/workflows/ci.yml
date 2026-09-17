@@ -22,6 +22,8 @@ jobs:
         run: if [ -f package-lock.json ]; then npm ci; else npm install --no-package-lock; fi
       - name: Test
         run: npm test
+      - name: Security audit
+        run: npm audit --omit=dev --audit-level=high
       - name: Typecheck
         run: npm run typecheck --if-present
       - name: Build
