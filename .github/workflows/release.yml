@@ -24,7 +24,6 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org
-          cache: npm
       - name: Install dependencies
         run: if [ -f package-lock.json ]; then npm ci; else npm install --no-package-lock; fi
       - run: npm test
