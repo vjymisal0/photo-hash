@@ -2,7 +2,7 @@
 
 ## Module format
 
-This package is ESM-only. Use `import` syntax in Node.js projects with `type: module`. CommonJS applications can load it with `await import("photo-hash")`.
+This package supports both ESM and CommonJS. CommonJS calls return the same Promises as the ESM API; hash comparison helpers remain synchronous.
 
 
 Detect near-duplicate photos using a perceptual difference hash (dHash). Two images of the same content - even resized, recompressed, or lightly edited - hash to nearly the same value, while unrelated images hash very differently.
