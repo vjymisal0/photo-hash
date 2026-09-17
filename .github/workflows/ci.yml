@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        run: if [ -f package-lock.json ]; then npm ci; else npm install --no-package-lock; fi
+      - name: Test
+        run: npm test
+      - name: Typecheck
+        run: npm run typecheck --if-present
+      - name: Build
+        run: npm run build --if-present
+      - name: Inspect package contents
+        run: npm pack --dry-run
