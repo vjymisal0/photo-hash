@@ -1,6 +1,6 @@
 {
   "name": "photo-hash",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Detect near-duplicate photos using a perceptual difference hash (dHash) - robust to resizing and recompression",
   "type": "module",
   "main": "./src/index.js",
@@ -44,7 +44,7 @@
   "author": "Vijay Misal <misalvijay153@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "sharp": "^0.35.3"
+    "sharp": "0.35.4"
   },
   "engines": {
     "node": ">=18"
