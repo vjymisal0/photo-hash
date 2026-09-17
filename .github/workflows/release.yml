@@ -1,12 +1,9 @@
 name: Release
 
 on:
-  workflow_dispatch:
-    inputs:
-      tag:
-        description: "Git tag to release (for example v1.2.3)"
-        required: true
-        type: string
+  push:
+    tags:
+      - "v*.*.*"
 
 permissions:
   contents: read
@@ -19,11 +16,20 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
-          ref: ${{ inputs.tag }}
+          ref: ${{ github.ref }}
       - uses: actions/setup-node@v5
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org
+      - name: Verify SemVer tag
+        shell: bash
+        run: |
+          package_version=$(node -p "require('./package.json').version")
+          tag_version="${GITHUB_REF_NAME#v}"
+          test "$package_version" = "$tag_version" || {
+            echo "Tag v$tag_version does not match package.json version $package_version"
+            exit 1
+          }
       - name: Install dependencies
         run: if [ -f package-lock.json ]; then npm ci; else npm install --no-package-lock; fi
       - run: npm test
