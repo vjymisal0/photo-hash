@@ -81,3 +81,7 @@ This is why the default threshold is `0.9`: it comfortably catches resized/recom
 ## License
 
 MIT
+
+## Limitations
+
+Perceptual hashes are similarity signals, not proof of identity or ownership. Rotation, mirroring, and heavy cropping can reduce accuracy.

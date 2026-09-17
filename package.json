@@ -1,6 +1,6 @@
 {
   "name": "photo-hash",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Detect near-duplicate photos using a perceptual difference hash (dHash) - robust to resizing and recompression",
   "type": "module",
   "main": "./src/index.js",
