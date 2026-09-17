@@ -29,6 +29,13 @@ jobs:
       - run: npm test
       - run: npm run typecheck --if-present
       - run: npm run build --if-present
+      - name: Validate packed artifact
+        run: |
+          mkdir -p "$RUNNER_TEMP/package-artifact" "$RUNNER_TEMP/package-consumer"
+          npm pack --pack-destination "$RUNNER_TEMP/package-artifact"
+          cd "$RUNNER_TEMP/package-consumer"
+          npm init -y
+          npm install "$RUNNER_TEMP/package-artifact"/*.tgz
       - name: Publish with provenance
         run: npm publish --provenance --access public
         env:
