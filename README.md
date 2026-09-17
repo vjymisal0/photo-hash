@@ -1,5 +1,10 @@
 # photo-hash
 
+## Module format
+
+This package is ESM-only. Use `import` syntax in Node.js projects with `type: module`. CommonJS applications can load it with `await import("photo-hash")`.
+
+
 Detect near-duplicate photos using a perceptual difference hash (dHash). Two images of the same content - even resized, recompressed, or lightly edited - hash to nearly the same value, while unrelated images hash very differently.
 
 Useful for deduplicating photo libraries, catching re-uploaded images, or flagging near-identical submissions.
