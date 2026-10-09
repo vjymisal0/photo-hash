@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.6
+
+- Security: bumped `sharp` to 0.35.5 to fix CVE-2026-96889 (GHSA-wq5f-xc86-pv6w) in its bundled librsvg.
+
 ## 1.0.5
 
 - Upgraded Sharp to include current security fixes.
